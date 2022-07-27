@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orders.Web", "Orders.Web\Orders.Web.csproj", "{F64B4265-F8D9-4662-8FF7-D54494F1EB1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orders.Core", "Orders.Core\Orders.Core.csproj", "{80287AA8-A70C-4403-AEFC-44BC80BEB3BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orders.Data", "Orders.Data\Orders.Data.csproj", "{76B095A2-0AA2-46AD-A9BD-59ADAE8F57E0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F64B4265-F8D9-4662-8FF7-D54494F1EB1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F64B4265-F8D9-4662-8FF7-D54494F1EB1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F64B4265-F8D9-4662-8FF7-D54494F1EB1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F64B4265-F8D9-4662-8FF7-D54494F1EB1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80287AA8-A70C-4403-AEFC-44BC80BEB3BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80287AA8-A70C-4403-AEFC-44BC80BEB3BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80287AA8-A70C-4403-AEFC-44BC80BEB3BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80287AA8-A70C-4403-AEFC-44BC80BEB3BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76B095A2-0AA2-46AD-A9BD-59ADAE8F57E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76B095A2-0AA2-46AD-A9BD-59ADAE8F57E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76B095A2-0AA2-46AD-A9BD-59ADAE8F57E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76B095A2-0AA2-46AD-A9BD-59ADAE8F57E0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
