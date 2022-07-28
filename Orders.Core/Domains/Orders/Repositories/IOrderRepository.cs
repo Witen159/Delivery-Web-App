@@ -4,10 +4,10 @@ namespace Orders.Core.Domains.Orders.Repositories
 {
     public interface IOrderRepository
     {
-        Order Get(string id);
+        Order Get(int id);
         IEnumerable<Order> GetAll();
-        void Creat(Order order);
+        void Create(Order order);
         void Update(Order order);
-        void Delete(string id);
+        void Delete(int id);
     }
 }

@@ -4,7 +4,6 @@ namespace Orders.Core.Domains.Orders
 {
     public class Order
     {
-        public string Id { get; set; }
         public int OrderNumber { get; set; }
         public string SendersCity { get; set; }
         public string SendersAddress { get; set; }

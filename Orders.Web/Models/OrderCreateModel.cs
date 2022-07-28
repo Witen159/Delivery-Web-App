@@ -2,9 +2,8 @@
 
 namespace Orders.Web.Models
 {
-    public class OrderModel
+    public class OrderCreateModel
     {
-        public int OrderNumber { get; set; }
         public string SendersCity { get; set; }
         public string SendersAddress { get; set; }
         public string RecipientsCity { get; set; }

@@ -1,6 +1,4 @@
-using System;
-
-namespace OrdersWebApp.Models
+namespace Orders.Web.Models
 {
     public class ErrorViewModel
     {

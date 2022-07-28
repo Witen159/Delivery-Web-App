@@ -8,7 +8,7 @@ namespace Orders.Data
 {
     public class OrderContext : DbContext
     {
-        public DbSet<OrderEntity> Users { get; set; }
+        public DbSet<OrderEntity> Orders { get; set; }
         
         public OrderContext(DbContextOptions options) : base(options)
         {
@@ -19,7 +19,7 @@ namespace Orders.Data
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(OrderContext).Assembly);
             base.OnModelCreating(modelBuilder);
         }
-
+        
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseLazyLoadingProxies();
@@ -33,7 +33,7 @@ namespace Orders.Data
         public OrderContext CreateDbContext(string[] args)
         {
             var options = new DbContextOptionsBuilder()
-                .UseNpgsql("Host=localhost;Port=5432;Database=converter-test;Username=postgres;Password=Madmanp159")
+                .UseNpgsql("Host=localhost;Port=5432;Database=delivery-db;Username=postgres;Password=Madmanp159")
                 .Options;
 
             return new OrderContext(options);

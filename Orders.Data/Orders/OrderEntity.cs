@@ -9,8 +9,6 @@ namespace Orders.Data.Orders
     [Table("order")]
     public class OrderEntity
     {
-        [Column("id")]
-        public string Id { get; set; }
         [Column("order_number")]
         public int OrderNumber { get; set; }
         [Column("senders_city")]
@@ -30,7 +28,7 @@ namespace Orders.Data.Orders
         {
             public void Configure(EntityTypeBuilder<OrderEntity> builder)
             {
-                builder.HasKey(x => x.Id);
+                builder.HasKey(x => x.OrderNumber).HasName("pk_id");
             }
         }
     }

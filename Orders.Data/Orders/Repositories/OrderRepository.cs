@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using Orders.Core.Domains.Orders;
 using Orders.Core.Domains.Orders.Repositories;
 
@@ -13,29 +15,81 @@ namespace Orders.Data.Orders.Repositories
             _context = context;
         }
 
-        public Order Get(string id)
+        public Order Get(int id)
         {
-            throw new System.NotImplementedException();
+            var entity = _context.Orders.AsNoTracking().FirstOrDefault(x => x.OrderNumber == id);
+
+            if (entity == null)
+            {
+                return null;
+            }
+
+            return new Order()
+            {
+                OrderNumber = entity.OrderNumber,
+                SendersAddress = entity.SendersAddress,
+                SendersCity = entity.SendersCity,
+                RecipientsAddress = entity.RecipientsAddress,
+                RecipientsCity = entity.RecipientsCity,
+                OrderWeightKg = entity.OrderWeightKg,
+                PickupDate = entity.PickupDate
+            };
         }
 
         public IEnumerable<Order> GetAll()
         {
-            throw new System.NotImplementedException();
+            var users = _context.Orders.AsNoTracking().ToList();
+            
+            return users.Select(x => new Order()
+            {
+                OrderNumber = x.OrderNumber,
+                SendersAddress = x.SendersAddress,
+                SendersCity = x.SendersCity,
+                RecipientsAddress = x.RecipientsAddress,
+                RecipientsCity = x.RecipientsCity,
+                OrderWeightKg = x.OrderWeightKg,
+                PickupDate = x.PickupDate
+            });
         }
 
-        public void Creat(Order order)
+        public void Create(Order order)
         {
-            throw new System.NotImplementedException();
+            var entity = new OrderEntity()
+            {
+                SendersAddress = order.SendersAddress,
+                SendersCity = order.SendersCity,
+                RecipientsAddress = order.RecipientsAddress,
+                RecipientsCity = order.RecipientsCity,
+                OrderWeightKg = order.OrderWeightKg,
+                PickupDate = order.PickupDate
+            };
+
+            _context.Orders.Add(entity);
         }
 
         public void Update(Order order)
         {
-            throw new System.NotImplementedException();
+            var entity = _context.Orders.FirstOrDefault(x => x.OrderNumber == order.OrderNumber);
+
+            if (entity != null)
+            {
+                entity.SendersAddress = order.SendersAddress;
+                entity.SendersCity = order.SendersCity;
+                entity.RecipientsAddress = order.RecipientsAddress;
+                entity.RecipientsCity = order.RecipientsCity;
+                entity.OrderWeightKg = order.OrderWeightKg;
+                entity.PickupDate = order.PickupDate;
+            }
         }
 
-        public void Delete(string id)
+        public void Delete(int id)
         {
-            throw new System.NotImplementedException();
+            var entity = _context.Orders.FirstOrDefault(x => x.OrderNumber == id);
+
+            if (entity != null)
+            {
+                _context.Orders.Remove(entity);
+            }
         }
     }
 }

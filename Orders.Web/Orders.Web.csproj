@@ -2,11 +2,12 @@
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
-        <RootNamespace>OrdersWebApp</RootNamespace>
+<!--        <RootNamespace>OrdersWebApp</RootNamespace>-->
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Orders.Core\Orders.Core.csproj" />
+        <ProjectReference Include="..\Orders.Core\Orders.Core.csproj" />
+        <ProjectReference Include="..\Orders.Data\Orders.Data.csproj" />
     </ItemGroup>
 
 </Project>
