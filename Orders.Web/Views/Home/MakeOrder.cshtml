@@ -1,0 +1,45 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Оформление заказа</title>
+</head>
+<body>
+<div>
+    <h3>Форма оформления заказа</h3>
+    <p>Для оформления заказа заполните следующие поля:</p>
+    <form method="post">
+        <table>
+            <tr>
+                <td>Город отправителя:</td>
+                <td><input type="text" name="SendersCity" /> </td>
+            </tr>
+            <tr>
+                <td>Адрес отправителя:</td>
+                <td><input type="text" name="SendersAddress" /></td>
+            </tr>
+            <tr>
+                <td>Город получателя:</td>
+                <td><input type="text" name="RecipientsCity" /></td>
+            </tr>
+            <tr>
+                <td>Адрес получателя</td>
+                <td><input type="text" name="RecipientsAddress" /></td>
+            </tr>
+            <tr>
+                <td>Вес посылки (кг)</td>
+                <td><input type="text" name="OrderWeightKg" /></td>
+            </tr>
+            <tr>
+                <td>Дата забора груза</td>
+                <td><input type="text" name="PickupDate" /></td>
+            </tr>
+            <tr><td><input type="submit" value="Отправить" /> </td><td></td></tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

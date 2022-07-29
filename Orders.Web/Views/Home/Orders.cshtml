@@ -1,0 +1,32 @@
+@{
+    ViewData["Title"] = "List of Orders";
+}
+@model IEnumerable<Orders.Web.Models.OrderModel>
+
+<body>
+    <h3>Заказы</h3>
+    <table>
+        <tr>
+            <td>Номер заказа</td>
+            <td>Город отправителя</td>
+            <td>Адрес отправителя</td>
+            <td>Город получателя</td>
+            <td>Адрес получателя</td>
+            <td>Вес посылки (кг)</td>
+            <td>Дата забора груза</td>
+            <td></td>
+        </tr>
+        @foreach (var order in Model)
+            {
+            <tr>
+                <td>@order.OrderNumber</td>
+                <td>@order.SendersCity</td>
+                <td>@order.SendersAddress</td>
+                <td>@order.RecipientsCity</td>
+                <td>@order.RecipientsAddress</td>
+                <td>@order.OrderWeightKg</td>
+                <td>@order.PickupDate</td>
+            </tr>
+        }
+    </table>
+</body>
