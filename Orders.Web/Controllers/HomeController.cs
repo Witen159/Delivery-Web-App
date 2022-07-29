@@ -58,7 +58,7 @@ namespace Orders.Web.Controllers
                 PickupDate = order.PickupDate
             });
             
-            return RedirectToAction("Index");
+            return RedirectToAction("Orders");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
