@@ -35,7 +35,7 @@ namespace Orders.Web.Controllers
                 RecipientsCity = x.RecipientsCity,
                 OrderWeightKg = x.OrderWeightKg,
                 PickupDate = x.PickupDate
-            });
+            }).Reverse();
             
             return View(viewModel);
         }
