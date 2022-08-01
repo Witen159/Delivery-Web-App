@@ -10,6 +10,7 @@ using Orders.Core.Domains.Orders.Repositories;
 using Orders.Core.Domains.Orders.Services;
 using Orders.Data;
 using Orders.Data.Orders.Repositories;
+using Orders.Web.Middlewares;
 
 namespace Orders.Web
 {
@@ -48,7 +49,7 @@ namespace Orders.Web
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                //app.UseDeveloperExceptionPage();
                 
                 // app.UseSwagger();
                 // app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Orders.Web v1"));
@@ -60,6 +61,8 @@ namespace Orders.Web
                 app.UseHsts();
             }
 
+            app.UseMiddleware<ExceptionMiddleware>();
+            
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
